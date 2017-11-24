@@ -15,7 +15,7 @@ Optional Parameters:
 	[-cmap <string>] matplotlib colormap (default: 'RdBu')  
 	[-csym <bool>] colorbar symmetric  
 	[-num <bool>] print total difference  
-	[-sgn SIGNED] difference values with sign (default: True)  
+	[-sgn <bool>] difference values with sign (default: True)  
 
 ## Example
 
