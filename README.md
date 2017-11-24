@@ -8,6 +8,7 @@ Python code to compute the color difference (with sign) between two images
 ```
 
 Optional Parameters:  
+```
 	[-o <string>] output filename (default: rms.png)  
 	[-s <float>] scale multiplier for difference  
 	[-cbar <bool>] show colorbar  
@@ -16,6 +17,7 @@ Optional Parameters:
 	[-csym <bool>] colorbar symmetric  
 	[-num <bool>] print total difference  
 	[-sgn <bool>] difference values with sign (default: True)  
+```
 
 ## Example
 
