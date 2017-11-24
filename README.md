@@ -19,9 +19,9 @@ Optional Parameters:
 
 ./image_difference.py -cbar=False examples/image1.png examples/image2.png  
 
-![image1](/examples/image1.png){:height="50%" width="50%"}
-![image2](/examples/image2.png){:height="50%" width="50%"}
-![rms](/examples/rms.png){:height="50%" width="50%"}
+<img src="/examples/image1.png" width="100" height="100">
+<img src="/examples/image2.png" width="100" height="100">
+<img src="/examples/rms.png" width="100" height="100">
 
 Removing the colorbar generates an RMS image with the exact same size of the original images,
 with white background and without any added white border (padding). This is ideal to display
