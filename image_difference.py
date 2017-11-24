@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 import seaborn as sns; sns.set()
@@ -21,12 +21,11 @@ def rms(image1, image2, signed=False, **kwargs):
 		sgn = -1 + 2*(diff_rgb_sum >= 0)
 		return sgn * rms
 
-def plot_rms(rms, output='rms.png', scale=1.0, cmap='RdBu', cbar_symmetric=False, cbar=False, cbar_size=0.8, **kwargs):
-	if (cmap == 'Tom'):
-		rms_cmap = tom_cmap
-	else:
-		orig_cmap = plt.get_cmap(cmap)
-		rms_cmap = mcolors.LinearSegmentedColormap.from_list(name='rms_cmap', N=255, colors=[orig_cmap(0), (1,1,1), orig_cmap(255)])
+def plot_rms(rms, output='rms.png', scale=1.0, cmap='RdBu', cbar_symmetric=False, cbar=True, cbar_size=0.8, **kwargs):
+	print(cbar)
+    
+	orig_cmap = plt.get_cmap(cmap)
+	rms_cmap = mcolors.LinearSegmentedColormap.from_list(name='rms_cmap', N=255, colors=[orig_cmap(0), (1,1,1), orig_cmap(255)])
 
 	vmin, vmax = None, None
 	if (cbar_symmetric):
@@ -48,17 +47,19 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser('Compute signed square difference between two images')
 	parser.add_argument('image1', help='Input image 1')
 	parser.add_argument('image2', help='Input image 2')
-	parser.add_argument('-o', '--output', default='rms.png', type=str)
-	parser.add_argument('-cscale', '--scale', default=1.0, type=float)
+	parser.add_argument('-o', '--output', default='rms.png')
+	parser.add_argument('-s', '--scale', default=1.0, type=float)
 	parser.add_argument('-cbar', '--cbar', default=True)
 	parser.add_argument('-csize', '--cbar_size', default=0.8, type=float)
-	parser.add_argument('-cmap', '--cmap', default='RdBu', type=str)
-	parser.add_argument('-cbar_sym', '--cbar_symmetric', default=False, help='symmetric colorbar')
+	parser.add_argument('-cmap', '--cmap', default='RdBu')
+	parser.add_argument('-csym', '--cbar_symmetric', default=False, help='symmetric colorbar')
 	parser.add_argument('-num', '--numeric', default=False, help='print total rms')
 	parser.add_argument('-sgn', '--signed', default=True, help='absolute difference')
 	
 	args = parser.parse_args()
 	args_dict = vars(args)
+
+	print(args.cbar)
 
 	rms = rms(**args_dict)
 	
