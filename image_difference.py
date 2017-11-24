@@ -22,8 +22,6 @@ def rms(image1, image2, signed=False, **kwargs):
 		return sgn * rms
 
 def plot_rms(rms, output='rms.png', scale=1.0, cmap='RdBu', cbar_symmetric=False, cbar=True, cbar_size=0.8, **kwargs):
-	print(cbar)
-    
 	orig_cmap = plt.get_cmap(cmap)
 	rms_cmap = mcolors.LinearSegmentedColormap.from_list(name='rms_cmap', N=255, colors=[orig_cmap(0), (1,1,1), orig_cmap(255)])
 
@@ -58,8 +56,6 @@ if __name__ == '__main__':
 	
 	args = parser.parse_args()
 	args_dict = vars(args)
-
-	print(args.cbar)
 
 	rms = rms(**args_dict)
 	
