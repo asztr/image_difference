@@ -3,9 +3,9 @@ Python code to compute the color difference (with sign) between two images
 
 ## Usage
 
-./image_difference <image1> <image2>
+./image_difference <image1> <image2>  
 
-Optional Parameters:
+Optional Parameters:  
 	[-o <string>] output filename (default: rms.png)  
 	[-s <float>] scale multiplier for difference  
 	[-cbar <bool>] show colorbar  
@@ -17,11 +17,11 @@ Optional Parameters:
 
 ## Example
 
-./image_difference.py -cbar=False examples/image1.png examples/image2.png
+./image_difference.py -cbar=False examples/image1.png examples/image2.png  
 
-![image1](/examples/image1.png | width=100)
-![image2](/examples/image2.png | width=100)
-![rms](/examples/rms.png | width=100)
+![image1](/examples/image1.png){:height="50%" width="50%"}
+![image2](/examples/image2.png){:height="50%" width="50%"}
+![rms](/examples/rms.png){:height="50%" width="50%"}
 
 Removing the colorbar generates an RMS image with the exact same size of the original images,
 with white background and without any added white border (padding). This is ideal to display
