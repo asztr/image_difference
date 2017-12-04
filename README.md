@@ -28,13 +28,25 @@ In the default mode of operation the code generates an image with the color diff
 
 <img src="/examples/image1.png" width="30%"><img src="/examples/image2.png" width="30%"><img src="/examples/both.png" width="30%">
 
-
+However the error image has a different resolution than the original images, which is bothersome for visual comparison.
+To solve this problem we can use the error_only mode, which produces an error image with the original resolution, without
+any white border (padding):
 ```bash
-./image_difference.py image1.png image2.png  
+./image_difference.py image1.png image2.png -m error_only
 ```
 
-<img src="/examples/image1.png" width="30%"><img src="/examples/image2.png" width="30%"><img src="/examples/rms.png" width="30%">
+<img src="/examples/image1.png" width="30%"><img src="/examples/image2.png" width="30%"><img src="/examples/rms.png" width="30%"><img src="/examples/cbar.png" width="5%">
 
-Removing the colorbar generates an RMS image with the exact same size of the original images,
-with white background and without any added white border (padding). This is ideal to display
-the difference alongside the original images.
+This is ideal to display the difference alongside the original images. If we also wish to show the colorbar, we need to generate it in a separate image file:
+```bash
+./image_difference.py image1.png image2.png -m cbar_only -o cbar.png
+```
+
+## Color difference computation
+
+The color difference is computed as:
+
+<img src="diff-eqn.png" width="50%">
+
+were the denominator is a normalization factor so that the maximum possible difference in a single pixel is 1 (which happens when
+the pixel is pure white in one image and pure black in the other).
