@@ -11,18 +11,26 @@ Optional Parameters:
 ```
 	[-o <string>] output filename (default: rms.png)  
 	[-s <float>] scale multiplier for difference  
-	[-cbar <bool>] show colorbar  
-	[-csize <float>] size of colorbar (default: 1.0)  
+	[-csize <float>] size of colorbar (default: 0.8)  
 	[-cmap <string>] matplotlib colormap (default: 'RdBu')  
-	[-csym <bool>] colorbar symmetric  
-	[-num <bool>] print total difference  
-	[-sgn <bool>] difference values with sign (default: True)  
+	[-num] print total difference  
+	[-d <bool>] divergent error: difference values with sign (default: True)
+	[-m {error_only, cbar_only, both}] output content (error and colorbar or only one component) (default: both)
+	[-vmin <float>] Minimum value in the colorbar
+	[-vmax <float>] Maximum value in the colorbar
 ```
 
-## Example
+## Examples
+In the default mode of operation the code generates an image with the color difference between two images:
+```bash
+./image_difference.py image1.png image2.png  
+```
+
+<img src="/examples/image1.png" width="30%"><img src="/examples/image2.png" width="30%"><img src="/examples/both.png" width="30%">
+
 
 ```bash
-./image_difference.py -cbar=False examples/image1.png examples/image2.png  
+./image_difference.py image1.png image2.png  
 ```
 
 <img src="/examples/image1.png" width="30%"><img src="/examples/image2.png" width="30%"><img src="/examples/rms.png" width="30%">
