@@ -35,7 +35,7 @@ any white border (padding):
 ./image_difference.py image1.png image2.png -m error_only
 ```
 
-<img src="/examples/image1.png" width="30%"><img src="/examples/image2.png" width="30%"><img src="/examples/rms.png" width="30%"><img align="center" src="/examples/cbar.png" width="5%">
+<div><img src="/examples/image1.png" width="30%"><img src="/examples/image2.png" width="30%"><img src="/examples/rms.png" width="30%"><img src="/examples/cbar.png" width="5%"></div>
 
 This is ideal to display the difference alongside the original images. If we also wish to show the colorbar, we need to generate it in a separate image file:
 ```bash
