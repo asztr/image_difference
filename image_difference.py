@@ -24,7 +24,7 @@ def rms(image1, image2, divergent=False, **kwargs):
 		return sgn * rms
 
 def pct_fmt(x, pos):
-    return r'${} \%$'.format(x*100.0)
+    return r'${0:.2g} \%$'.format(x*100.0)
 
 def sign(x):
 	return x/np.abs(x)
