@@ -48,8 +48,9 @@ This is ideal to display the difference alongside the original images. If we als
 ## Color difference computation
 
 The color difference is computed as:
-
-<img src="/img/diff-eqn.png" width="50%">
+<p align="center">
+	<img src="/img/diff-eqn.png" width="50%">
+</p>
 
 were the denominator is a normalization factor so that the maximum possible difference in a single pixel is 1 (which happens when the pixel is pure white in one image and pure black in the other). With the option --pct_ticks we can convert these values to percentages.
 
@@ -59,8 +60,9 @@ For plots where most of the information is contained in a subset of the colorbar
 ```bash
 ./image_difference.py image1.png image2.png --cbar_sens <value>
 ```
-
-<img align='center' src='/img/cbar_sensitivity.png' width='60%'>
+<p align="center">
+	<img src='/img/cbar_sensitivity.png' width='60%'>
+</p>
 
 ## Colormap
 
